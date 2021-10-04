@@ -1,0 +1,14 @@
+﻿header.masthead {
+	position: relative;
+	background-image: url('/images/masthead.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 2rem;
+	padding-bottom: 4rem;
+}
+header.masthead .jumbotron {
+	background-color: rgba(33, 36, 39, 0.75);
+	border-radius: 0.25rem;
+	padding: 4rem 2rem 5rem;
+}

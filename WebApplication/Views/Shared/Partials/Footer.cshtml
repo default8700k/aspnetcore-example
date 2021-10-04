@@ -1,0 +1,52 @@
+﻿<div class="container-xl mt-3 mt-md-4 mt-lg-5">
+	<div class="border-top pt-3 pt-md-4 pt-lg-5 mb-3">
+		<div class="row">
+			<div class="col-sm-6 col-lg-3">
+				<h5>Карта сайта</h5>
+				<ul class="list-unstyled">
+					<li><a class="link-secondary" asp-controller="Home" asp-action="Index">Главная</a></li>
+					<li class="dropdown">
+						<a class="link-secondary dropdown-toggle" asp-controller="Services" asp-action="Index" id="footer-services-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Услуги</a>
+						<ul class="dropdown-menu" aria-labelledby="footer-services-dropdown">
+							<li><a class="dropdown-item" asp-controller="Services" asp-action="Groupage">Сборные грузоперевозки</a></li>
+							<li><a class="dropdown-item" asp-controller="Services" asp-action="Individual">Индивидуальные грузоперевозки</a></li>
+							<li><a class="dropdown-item" asp-controller="Services" asp-action="Delivery">Доставка «От двери до двери»</a></li>
+							<li><a class="dropdown-item" asp-controller="Services" asp-action="Storage">Складские услуги</a></li>
+							<li><a class="dropdown-item" asp-controller="Services" asp-action="Insurance">Страхование</a></li>
+						</ul>
+					</li>
+					<li><a class="link-secondary" asp-controller="Home" asp-action="Calculator">Калькулятор</a></li>
+					<li><a class="link-secondary" asp-controller="Home" asp-action="Conditions">Условия перевозки</a></li>
+					<li><a class="link-secondary" asp-controller="Home" asp-action="Order">Оформить заявку</a></li>
+					<li class="dropdown">
+						<a class="link-secondary dropdown-toggle" asp-controller="About" asp-action="Index" id="footer-about-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">О компании</a>
+						<ul class="dropdown-menu" aria-labelledby="footer-about-dropdown">
+							<li><a class="dropdown-item" asp-controller="About" asp-action="Documents">Документация</a></li>
+							<li><a class="dropdown-item" asp-controller="About" asp-action="Plans">Виды грузоперевозок и тарифы</a></li>
+							<li><a class="dropdown-item" asp-controller="About" asp-action="More">Подробнее о нас</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="col-sm-6 col-lg-3">
+				<h5>Изображения</h5>
+				<ul class="list-unstyled">
+					<li><a class="link-secondary" href="https://unsplash.com/photos/uHMtAkVUIjo" target="_blank">masthead.jpg (c) unsplash.com</a></li>
+					<li><a class="link-secondary" href="https://unsplash.com/photos/GBVDilE8yvI" target="_blank">groupage.jpg (c) unsplash.com</a></li>
+					<li><a class="link-secondary" href="https://unsplash.com/photos/krhseyzjrYk" target="_blank">individual.jpg (c) unsplash.com</a></li>
+					<li><a class="link-secondary" href="https://unsplash.com/photos/BFdSCxmqvYc" target="_blank">delivery.jpg (c) unsplash.com</a></li>
+					<li><a class="link-secondary" href="https://unsplash.com/photos/ZVkDLrXGMdw" target="_blank">storage.jpg (c) unsplash.com</a></li>
+					<li><a class="link-secondary" href="https://unsplash.com/photos/OQMZwNd3ThU" target="_blank">insurance.jpg (c) unsplash.com</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-6">
+				<h5>О нас</h5>
+				<p class="text-secondary mb-2">Cras ut mattis eros. Nullam leo dui, tincidunt sit amet ultrices non, hendrerit nec dui. Maecenas lobortis elementum placerat. Sed finibus mollis ipsum, nec aliquam elit gravida eu. Nam dapibus enim quam, eget ultricies tellus semper ultricies. Aenean dictum pretium magna, id porttitor lorem molestie vehicula. Nulla efficitur.</p>
+				<div class="d-sm-flex small">
+					<a class="d-block link-primary me-sm-3" href="#modal-callback" role="button" data-bs-toggle="modal">Заявка на обратный звонок</a>
+					<a class="d-block link-primary" asp-controller="Home" asp-action="Terms">Обработка персональных данных</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

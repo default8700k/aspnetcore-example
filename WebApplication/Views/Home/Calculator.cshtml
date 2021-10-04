@@ -1,0 +1,91 @@
+﻿@{
+	ViewBag.Title = "Калькулятор";
+	ViewBag.Scripts = new String[] {
+		"/scripts/pages/calculator/rates.js",
+		"/scripts/pages/calculator/routes.js",
+		"/scripts/pages/calculator/services.js",
+		"/scripts/pages/calculator.js"
+	};
+}
+<div class="container-xl pt-3 pt-md-4 pt-lg-5">
+	<h1 class="display-4 text-center mb-2 mb-md-3 mb-lg-4">Калькулятор</h1>
+	<h5>Маршрут</h5>
+	<div class="row">
+		<div class="mb-3 col-sm-6">
+			<label class="form-label" for="city-from">Город отправления</label>
+			<select class="form-select" id="city-from">
+				<!option value="Moscow" selected>Москва</!option>
+				<!option value="Lipetsk">Липецк</!option>
+			</select>
+		</div>
+		<div class="mb-3 col-sm-6">
+			<label class="form-label" for="city-to">Город получения</label>
+			<select class="form-select" id="city-to">
+				<!option value="Moscow">Москва</!option>
+				<!option value="Lipetsk" selected>Липецк</!option>
+			</select>
+		</div>
+	</div>
+	<h5>Параметры груза</h5>
+	<div class="row" id="fields">
+		<div class="mb-3 col-sm-6 col-lg-2">
+			<label class="form-label" for="length">Длина</label>
+			<div class="input-group">
+				<input class="form-control" id="length" placeholder="0.00" />
+				<span class="input-group-text">м</span>
+			</div>
+		</div>
+		<div class="mb-3 col-sm-6 col-lg-2">
+			<label class="form-label" for="width">Ширина</label>
+			<div class="input-group">
+				<input class="form-control" id="width" placeholder="0.00" />
+				<span class="input-group-text">м</span>
+			</div>
+		</div>
+		<div class="mb-3 col-sm-6 col-lg-2">
+			<label class="form-label" for="height">Высота</label>
+			<div class="input-group">
+				<input class="form-control" id="height" placeholder="0.00" />
+				<span class="input-group-text">м</span>
+			</div>
+		</div>
+		<div class="mb-3 col-sm-6 col-lg-2">
+			<label class="form-label" for="weight">Вес</label>
+			<div class="input-group">
+				<input class="form-control" id="weight" placeholder="0.00" />
+				<span class="input-group-text">кг</span>
+			</div>
+		</div>
+		<div class="mb-3 col-lg-2">
+			<label class="form-label" for="volume">Объем</label>
+			<div class="input-group">
+				<input class="form-control" id="volume" value="0.00" disabled />
+				<span class="input-group-text">м³</span>
+			</div>
+		</div>
+		<div class="mb-3 col-lg-2">
+			<div class="d-flex flex-column justify-content-end h-100">
+				<button class="btn btn-primary" type="button">Добавить</button>
+			</div>
+		</div>
+	</div>
+	<h5>Дополнительные услуги</h5>
+	<div class="mb-3">
+		<div class="form-check">
+			<input class="form-check-input" type="checkbox" id="isPickup" />
+			<label class="form-check-label" for="isPickup">Забрать груз по адресу</label>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="checkbox" id="isDelivery" />
+			<label class="form-check-label" for="isDelivery">Доставить груз по адресу</label>
+		</div>
+	</div>
+	<div class="d-flex flex-column flex-sm-row">
+		<button class="btn btn-primary order-1 order-sm-0" type="button" id="calculate">Посчитать примерную стоимость</button>
+		<div class="d-flex align-items-sm-center order-0 order-sm-1">
+			<span class="ms-sm-2 mb-2 mb-sm-0">
+				Примерная стоимость: <span class="text-primary" id="calculator-result">0.00</span> ₽
+			</span>
+		</div>
+	</div>
+</div>

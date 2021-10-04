@@ -1,0 +1,9 @@
+﻿<link rel="icon" type="image/png" href="/favicon.png" asp-append-version="true" />
+
+<link rel="stylesheet" type="text/css" href="/lib/bootstrap/bootstrap.min.css" asp-append-version="true" />
+<link rel="stylesheet" type="text/css" href="/css/fonts.css" asp-append-version="true" />
+<link rel="stylesheet" type="text/css" href="/css/styles.css" asp-append-version="true" />
+@for (Byte i = 0; i < ViewBag.Styles?.Length; i++)
+{
+	<link rel="stylesheet" type="text/css" href="@ViewBag.Styles[i]" asp-append-version="true" />
+}

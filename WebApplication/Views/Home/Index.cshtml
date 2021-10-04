@@ -1,0 +1,81 @@
+﻿@{
+	ViewBag.Title = "Главная";
+	ViewBag.Styles = new String[] { "/css/pages/index.css" };
+}
+<header class="masthead">
+	<div class="container-xl">
+		<div class="jumbotron text-white">
+			<h2 class="display-4">WebApplication (c) Maltsev Victor</h2>
+			<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac pellentesque ex, non fringilla ligula. Sed risus nisi, laoreet nec commodo faucibus, maximus eget libero. Etiam feugiat fermentum ullamcorper. Phasellus viverra augue ut mauris pulvinar pellentesque. Sed id imperdiet purus. Vivamus eleifend finibus tellus, non lacinia eros venenatis ut. Praesent ut felis libero. Suspendisse sapien nisi.</p>
+			<hr class="my-2 my-sm-4" />
+			<p>Morbi vel mauris egestas, hendrerit massa nec, molestie tellus. In vitae lectus eu tellus molestie posuere.</p>
+			<button class="btn btn-lg btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal-callback">Оставить заявку на обратный звонок</button>
+		</div>
+	</div>
+</header>
+<div class="container-xl pt-3 pt-md-4 pt-lg-5">
+	<h1 class="display-4 text-center mb-2 mb-md-3 mb-lg-4">Главная страница</h1>
+	<p class="lead">Ut egestas consectetur mi, id ornare ante auctor a. Proin rutrum mi ut condimentum semper. Vivamus congue sollicitudin pharetra. Ut dictum ligula turpis, vel tempor dui cursus eget. Duis eu diam pulvinar, finibus urna vel, iaculis urna. Curabitur interdum eros metus, at pellentesque velit gravida sit amet. Quisque tincidunt scelerisque metus, sit amet semper dolor. Curabitur ut nisi dui. Pellentesque nibh est, efficitur eu.</p>
+	<hr class="my-3 my-md-4 my-lg-5" />
+	<div class="row">
+		<div class="col-md-6 col-lg-4 mb-lg-5">
+			<div class="row">
+				<div class="col-sm-5 col-md-12 mb-3 mb-sm-0 mb-md-3 order-sm-1 order-md-0">
+					<img class="img-fluid rounded w-100" alt="" src="/images/services/groupage.jpg" asp-append-version="true" />
+				</div>
+				<div class="col-sm-7 col-md-12 order-sm-0 order-md-1">
+					<h4><a class="link-dark" asp-controller="Services" asp-action="Groupage">Сборные грузоперевозки</a></h4>
+					<p class="mb-0">Phasellus lobortis lacinia feugiat. In molestie sapien quis tincidunt faucibus. Aliquam ullamcorper aliquam sem, vitae tincidunt enim commodo ac. Nam a malesuada sem. Cras rutrum vitae neque sit amet malesuada. Vestibulum ullamcorper, elit sed lobortis feugiat.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-4 mb-lg-5">
+			<hr class="d-md-none my-3 my-md-4" />
+			<div class="row">
+				<div class="col-sm-5 col-md-12 mb-3 mb-sm-0 mb-md-3">
+					<img class="img-fluid rounded w-100" alt="" src="/images/services/individual.jpg" asp-append-version="true" />
+				</div>
+				<div class="col-sm-7 col-md-12">
+					<h4><a class="link-dark" asp-controller="Services" asp-action="Individual">Индивидуальные грузоперевозки</a></h4>
+					<p class="mb-0">Nulla consequat volutpat ex in tincidunt. Etiam molestie tincidunt sollicitudin. Cras at molestie lectus. Mauris non faucibus metus. Donec molestie enim vel fringilla ultrices. Sed aliquet vehicula convallis. Nunc quis auctor ante. Mauris pellentesque lorem sed.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-4 mb-lg-5">
+			<hr class="d-lg-none my-3 my-md-4" />
+			<div class="row">
+				<div class="col-sm-5 col-md-12 mb-3 mb-sm-0 mb-md-3 order-sm-1 order-md-0">
+					<img class="img-fluid rounded w-100" alt="" src="/images/services/delivery.jpg" asp-append-version="true" />
+				</div>
+				<div class="col-sm-7 col-md-12 order-sm-0 order-md-1">
+					<h4><a class="link-dark" asp-controller="Services" asp-action="Delivery">Доставка «От двери до двери»</a></h4>
+					<p class="mb-0">Maecenas porttitor malesuada risus vitae pellentesque. Suspendisse tincidunt laoreet sapien sit amet convallis. Nunc et mi eget neque sagittis posuere. Vestibulum vel nisl vehicula, tincidunt libero vel, feugiat velit. Cras pharetra risus a felis maximus tempus.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-4">
+			<hr class="d-lg-none my-3 my-md-4" />
+			<div class="row">
+				<div class="col-sm-5 col-md-12 mb-3 mb-sm-0 mb-md-3">
+					<img class="img-fluid rounded w-100" alt="" src="/images/services/storage.jpg" asp-append-version="true" />
+				</div>
+				<div class="col-sm-7 col-md-12">
+					<h4><a class="link-dark" asp-controller="Services" asp-action="Storage">Складские услуги</a></h4>
+					<p class="mb-0">Vestibulum eu vehicula metus, ac auctor erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer posuere pharetra urna. Aenean scelerisque arcu sem, id sollicitudin dolor cursus placerat. Ut placerat lacus.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-4">
+			<hr class="d-lg-none my-3 my-md-4" />
+			<div class="row">
+				<div class="col-sm-5 col-md-12 mb-3 mb-sm-0 mb-md-3 order-sm-1 order-md-0">
+					<img class="img-fluid rounded w-100" alt="" src="/images/services/insurance.jpg" asp-append-version="true" />
+				</div>
+				<div class="col-sm-7 col-md-12 order-sm-0 order-md-1">
+					<h4><a class="link-dark" asp-controller="Services" asp-action="Insurance">Страхование</a></h4>
+					<p class="mb-0">Donec sit amet tortor sed velit hendrerit efficitur. Maecenas id metus ullamcorper, aliquam erat in, finibus elit. Mauris elementum dignissim condimentum. Nunc convallis odio nulla, eu pretium nulla sollicitudin vel. Nulla in mauris vel lacus feugiat.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

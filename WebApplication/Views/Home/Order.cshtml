@@ -1,0 +1,202 @@
+﻿@using WebApplication.Models.Enums
+@model WebApplication.Models.Order
+@{
+	ViewBag.Title = "Оформить заявку";
+	ViewBag.Scripts = new String[] { "/scripts/pages/order.js" };
+}
+<div class="container-xl pt-3 pt-md-4 pt-lg-5">
+	<h1 class="display-4 text-center mb-2 mb-md-3 mb-lg-4">Оформить заявку</h1>
+	<form method="post" id="form-order" asp-controller="Home" asp-action="Order" autocomplete="off">
+		<h5>Информация о грузе</h5>
+		<div class="row">
+			<div class="mb-3 col-md-12 col-xxl-3">
+				@Html.LabelFor(p => p.Cargo.Date, new { @class = "form-label" })
+				@Html.TextBoxFor(p => p.Cargo.Date, new { @class = "form-control", @type = "date" })
+			</div>
+			<div class="mb-3 col-md-6 col-lg-4 col-xxl-6">
+				@Html.LabelFor(p => p.Cargo.Name, new { @class = "form-label" })
+				@Html.TextBoxFor(p => p.Cargo.Name, new { @class = "form-control" })
+			</div>
+			<div class="mb-3 col-md-6 col-lg-4 col-xxl-3">
+				@Html.LabelFor(p => p.Cargo.Composition, new { @class = "form-label" })
+				@Html.DropDownListFor(p => p.Cargo.Composition,
+					Html.GetEnumSelectList<Composition>(), new { @class = "form-select" }
+				)
+			</div>
+			<div class="mb-3 col-md-6 col-lg-4 col-xxl-3">
+				@Html.LabelFor(p => p.Cargo.Dimensions, new { @class = "form-label" })
+				@Html.DropDownListFor(p => p.Cargo.Dimensions,
+					Html.GetEnumSelectList<Dimensions>(), new { @class = "form-select" }
+				)
+			</div>
+			<div class="mb-3 col-md-6 col-lg-4 col-xxl-3">
+				@Html.LabelFor(p => p.Cargo.Weight, new { @class = "form-label" })
+				<div class="input-group">
+					@Html.TextBoxFor(p => p.Cargo.Weight, new { @class = "form-control" })
+					<span class="input-group-text">кг</span>
+				</div>
+			</div>
+			<div class="mb-3 col-md-6 col-lg-4 col-xxl-3">
+				@Html.LabelFor(p => p.Cargo.Volume, new { @class = "form-label" })
+				<div class="input-group">
+					@Html.TextBoxFor(p => p.Cargo.Volume, new { @class = "form-control" })
+					<span class="input-group-text">м³</span>
+				</div>
+			</div>
+			<div class="mb-3 col-md-6 col-lg-4 col-xxl-3">
+				@Html.LabelFor(p => p.Cargo.Price, new { @class = "form-label" })
+				<div class="input-group">
+					@Html.TextBoxFor(p => p.Cargo.Price, new { @class = "form-control" })
+					<span class="input-group-text">руб</span>
+				</div>
+			</div>
+		</div>
+		<h5>Отправитель груза</h5>
+		<div class="row">
+			<div class="mb-3 col-md-6 col-lg-4 col-xxl-3">
+				@Html.LabelFor(p => p.Sender.City, new { @class = "form-label" })
+				@Html.DropDownListFor(p => p.Sender.City,
+					Html.GetEnumSelectList<City>(), new { @class = "form-select" }
+				)
+			</div>
+			<div class="mb-3 col-md-6 col-lg-8 col-xxl-9">
+				@Html.LabelFor(p => p.Sender.Name, new { @class = "form-label" })
+				@Html.TextBoxFor(p => p.Sender.Name, new { @class = "form-control" })
+			</div>
+			<div class="mb-3 col-md-6 col-lg-8 col-xxl-9">
+				@Html.LabelFor(p => p.Sender.Address, new { @class = "form-label" })
+				@Html.TextBoxFor(p => p.Sender.Address, new { @class = "form-control" })
+			</div>
+			<div class="col-md-6 col-lg-4 col-xxl-3">
+				<div class="row">
+					<div class="mb-3 col-sm-6">
+						@Html.LabelFor(p => p.Sender.TimeStart, new { @class = "form-label" })
+						@Html.TextBoxFor(p => p.Sender.TimeStart, new { @class = "form-control" })
+					</div>
+					<div class="mb-3 col-sm-6">
+						@Html.LabelFor(p => p.Sender.TimeEnd, new { @class = "form-label" })
+						@Html.TextBoxFor(p => p.Sender.TimeEnd, new { @class = "form-control" })
+					</div>
+				</div>
+			</div>
+			<div class="mb-3 col-md-12 col-xxl-6">
+				@Html.LabelFor(p => p.Sender.Inn, new { @class = "form-label" })
+				@Html.TextBoxFor(p => p.Sender.Inn, new { @class = "form-control" })
+			</div>
+			<div class="mb-3 col-md-6 col-xxl-3">
+				@Html.LabelFor(p => p.Sender.ContactName, new { @class = "form-label" })
+				@Html.TextBoxFor(p => p.Sender.ContactName, new { @class = "form-control" })
+			</div>
+			<div class="mb-3 col-md-6 col-xxl-3">
+				@Html.LabelFor(p => p.Sender.ContactPhone, new { @class = "form-label" })
+				@Html.TextBoxFor(p => p.Sender.ContactPhone, new { @class = "form-control" })
+			</div>
+		</div>
+		<h6>Дополнительные услуги</h6>
+		<div class="mb-3">
+			<div class="form-check">
+				@Html.CheckBoxFor(p => p.Sender.IsTicket, new { @class = "form-check-input" })
+				@Html.LabelFor(p => p.Sender.IsTicket, new { @class = "form-check-label" })
+			</div>
+			<div class="form-check">
+				@Html.CheckBoxFor(p => p.Sender.IsLoadingWorks, new { @class = "form-check-input" })
+				@Html.LabelFor(p => p.Sender.IsLoadingWorks, new { @class = "form-check-label" })
+			</div>
+			<div class="form-check">
+				@Html.CheckBoxFor(p => p.Sender.IsPacking, new { @class = "form-check-input" })
+				@Html.LabelFor(p => p.Sender.IsPacking, new { @class = "form-check-label" })
+			</div>
+		</div>
+		<h5>Получатель груза</h5>
+		<div class="row">
+			<div class="mb-3 col-md-6 col-lg-4 col-xxl-3">
+				@Html.LabelFor(p => p.Receiver.City, new { @class = "form-label" })
+				@Html.DropDownListFor(p => p.Receiver.City,
+					Html.GetEnumSelectList<City>(), new { @class = "form-select" }
+				)
+			</div>
+			<div class="mb-3 col-md-6 col-lg-8 col-xxl-9">
+				@Html.LabelFor(p => p.Receiver.Name, new { @class = "form-label" })
+				@Html.TextBoxFor(p => p.Receiver.Name, new { @class = "form-control" })
+			</div>
+			<div class="mb-3 col-md-6 col-lg-8 col-xxl-9">
+				@Html.LabelFor(p => p.Receiver.Address, new { @class = "form-label" })
+				@Html.TextBoxFor(p => p.Receiver.Address, new { @class = "form-control" })
+			</div>
+			<div class="col-md-6 col-lg-4 col-xxl-3">
+				<div class="row">
+					<div class="mb-3 col-sm-6">
+						@Html.LabelFor(p => p.Receiver.TimeStart, new { @class = "form-label" })
+						@Html.TextBoxFor(p => p.Receiver.TimeStart, new { @class = "form-control" })
+					</div>
+					<div class="mb-3 col-sm-6">
+						@Html.LabelFor(p => p.Receiver.TimeEnd, new { @class = "form-label" })
+						@Html.TextBoxFor(p => p.Receiver.TimeEnd, new { @class = "form-control" })
+					</div>
+				</div>
+			</div>
+			<div class="mb-3 col-md-12 col-xxl-6">
+				@Html.LabelFor(p => p.Receiver.Inn, new { @class = "form-label" })
+				@Html.TextBoxFor(p => p.Receiver.Inn, new { @class = "form-control" })
+			</div>
+			<div class="mb-3 col-md-6 col-xxl-3">
+				@Html.LabelFor(p => p.Receiver.ContactName, new { @class = "form-label" })
+				@Html.TextBoxFor(p => p.Receiver.ContactName, new { @class = "form-control" })
+			</div>
+			<div class="mb-3 col-md-6 col-xxl-3">
+				@Html.LabelFor(p => p.Receiver.ContactPhone, new { @class = "form-label" })
+				@Html.TextBoxFor(p => p.Receiver.ContactPhone, new { @class = "form-control" })
+			</div>
+		</div>
+		<h6>Дополнительные услуги</h6>
+		<div class="mb-3">
+			<div class="form-check">
+				@Html.CheckBoxFor(p => p.Receiver.IsDeliveryOnTime, new { @class = "form-check-input" })
+				@Html.LabelFor(p => p.Receiver.IsDeliveryOnTime, new { @class = "form-check-label" })
+			</div>
+			<div class="form-check">
+				@Html.CheckBoxFor(p => p.Receiver.IsUnloadingWorks, new { @class = "form-check-input" })
+				@Html.LabelFor(p => p.Receiver.IsUnloadingWorks, new { @class = "form-check-label" })
+			</div>
+		</div>
+		<h5>Плательщик</h5>
+		<div class="row">
+			<div class="mb-3 col-md-6">
+				@Html.LabelFor(p => p.Payer.Name, new { @class = "form-label" })
+				@Html.TextBoxFor(p => p.Payer.Name, new { @class = "form-control" })
+			</div>
+			<div class="mb-3 col-md-6">
+				@Html.LabelFor(p => p.Payer.Email, new { @class = "form-label" })
+				@Html.TextBoxFor(p => p.Payer.Email, new { @class = "form-control" })
+			</div>
+			<div class="mb-3 col-md-12 col-xxl-6">
+				@Html.LabelFor(p => p.Payer.Inn, new { @class = "form-label" })
+				@Html.TextBoxFor(p => p.Payer.Inn, new { @class = "form-control" })
+			</div>
+			<div class="mb-3 col-md-6 col-xxl-3">
+				@Html.LabelFor(p => p.Payer.ContactName, new { @class = "form-label" })
+				@Html.TextBoxFor(p => p.Payer.ContactName, new { @class = "form-control" })
+			</div>
+			<div class="mb-3 col-md-6 col-xxl-3">
+				@Html.LabelFor(p => p.Payer.ContactPhone, new { @class = "form-label" })
+				@Html.TextBoxFor(p => p.Payer.ContactPhone, new { @class = "form-control" })
+			</div>
+			<div class="mb-3">
+				@Html.LabelFor(p => p.Comment, new { @class = "form-label" })
+				@Html.TextAreaFor(p => p.Comment, new { @class = "form-control", rows = 3 })
+			</div>
+		</div>
+		<div class="mb-3 form-check">
+			<input class="form-check-input" type="checkbox" id="order-termsofuse" required />
+			<label class="form-check-label" for="order-termsofuse">
+				Я согласен(-сна) с <a class="link-primary" asp-controller="Home" asp-action="Terms" target="_blank">обработкой персональных данных</a>
+			</label>
+		</div>
+		<div class="d-flex flex-column flex-sm-row">
+			<button class="btn btn-primary order-1 order-sm-0" type="submit">Оформить заявку</button>
+			<div class="d-flex align-items-sm-center order-0 order-sm-1">
+				<span class="ms-sm-2 mb-2 mb-sm-0" id="order-result"></span>
+			</div>
+		</div>
+	</form>
+</div>

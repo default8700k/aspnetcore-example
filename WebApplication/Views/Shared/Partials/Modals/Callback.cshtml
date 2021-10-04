@@ -1,0 +1,31 @@
+﻿@model WebApplication.Models.Call
+<div class="modal fade" role="dialog" tabindex="-1" id="modal-callback">
+	<div class="modal-dialog" role="document">
+		<form class="modal-content" asp-controller="Home" asp-action="Index" method="post" asp-antiforgery="true" autocomplete="off">
+			<div class="modal-header">
+				<h5 class="modal-title">Обратный звонок</h5>
+				<button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body">
+				<div class="mb-3">
+					@Html.LabelFor(p => p.Name, new { @class = "form-label" })
+					@Html.TextBoxFor(p => p.Name, new { @class = "form-control" })
+				</div>
+				<div class="mb-3">
+					@Html.LabelFor(p => p.Phone, new { @class = "form-label" })
+					@Html.TextBoxFor(p => p.Phone, new { @class = "form-control" })
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="callback-termsofuse" required />
+					<label class="form-check-label" for="callback-termsofuse">
+						Я согласен(-сна) с <a class="link-primary" asp-controller="Home" asp-action="Terms" target="_blank">обработкой персональных данных</a>
+					</label>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Закрыть</button>
+				<button class="btn btn-primary" type="submit">Перезвоните мне</button>
+			</div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta name="robots" content="@ViewBag.Robots" />
+	<meta name="description" content="@ViewBag.Description" />
+	<meta name="keywords" content="@ViewBag.Keywords" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="utf-8" />
+
+	@await Html.PartialAsync(@"Partials\Styles.cshtml")
+	@await Html.PartialAsync(@"Partials\Scripts.cshtml")
+
+	<title>@ViewBag.Title - WebApplication</title>
+</head>
+<body>
+	@await Html.PartialAsync(@"Partials\Navbar.cshtml")
+	<main role="main">
+		@RenderBody()
+	</main>
+	@await Html.PartialAsync(@"Partials\Footer.cshtml")
+
+	@await Html.PartialAsync(@"Partials\Modals\Callback.cshtml")
+	@await Html.PartialAsync(@"Partials\Modals\Info.cshtml")
+</body>
+</html>

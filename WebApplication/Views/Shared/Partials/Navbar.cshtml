@@ -1,0 +1,35 @@
+﻿<nav class="navbar navbar-expand-xl navbar-light bg-light fixed-top shadow">
+	<div class="container-xl">
+		<a class="navbar-brand" asp-controller="Home" asp-action="Index">WebApplication</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse pb-1 pb-xl-0" id="navigation">
+			<ul class="navbar-nav me-auto mb-2 mb-xl-0">
+				<li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Главная</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" asp-controller="Services" asp-action="Index" id="nav-services-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Услуги</a>
+					<ul class="dropdown-menu" aria-labelledby="nav-services-dropdown">
+						<li><a class="dropdown-item" asp-controller="Services" asp-action="Groupage">Сборные грузоперевозки</a></li>
+						<li><a class="dropdown-item" asp-controller="Services" asp-action="Individual">Индивидуальные грузоперевозки</a></li>
+						<li><a class="dropdown-item" asp-controller="Services" asp-action="Delivery">Доставка «От двери до двери»</a></li>
+						<li><a class="dropdown-item" asp-controller="Services" asp-action="Storage">Складские услуги</a></li>
+						<li><a class="dropdown-item" asp-controller="Services" asp-action="Insurance">Страхование</a></li>
+					</ul>
+				</li>
+				<li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Calculator">Калькулятор</a></li>
+				<li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Conditions">Условия перевозки</a></li>
+				<li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Order">Оформить заявку</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" asp-controller="About" asp-action="Index" id="nav-about-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">О компании</a>
+					<ul class="dropdown-menu" aria-labelledby="nav-about-dropdown">
+						<li><a class="dropdown-item" asp-controller="About" asp-action="Documents">Документация</a></li>
+						<li><a class="dropdown-item" asp-controller="About" asp-action="Plans">Виды грузоперевозок и тарифы</a></li>
+						<li><a class="dropdown-item" asp-controller="About" asp-action="More">Подробнее о нас</a></li>
+					</ul>
+				</li>
+			</ul>
+			<a class="navbar-text" href="tel:8900XXXXXXX">8-900-XXX-XX-XX</a>
+		</div>
+	</div>
+</nav>
